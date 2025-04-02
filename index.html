@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тарас Шевченко</title>
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: #0d0d2b url('https://www.transparenttextures.com/patterns/stardust.png');
+            color: #8a2be2;
+            margin: 0;
+            overflow-x: hidden;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
+        }
+
+        .content {
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            margin: 20px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        .content2 {
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            margin: 20px;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        h1, h2 {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+            text-align: center;
+        }
+
+        .scroll-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8a2be2;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+        p {
+             font-size: 1.4em;
+             margin-bottom: 30px;
+             color: mediumorchid;
+             text-align: center;
+}
+        ul {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            color: mediumorchid;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.artwork {
+    width: 300px;
+    text-align: center;
+}
+
+.artwork img {
+    display: block;
+    margin: 0 auto;
+}
+
+.artwork p {
+    margin: 10px 0 0;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+    </style>
+</head>
+<body>
+    <!-- Биография -->
+    <div class="section active" id="bio">
+        <div class="content">
+            <h1>Тарас Шевченко</h1>
+            <div class="bio-text">
+                <p>
+Народився 9 березня 1814 року у селі Моринці Звенигородського повіту Київської губернії в закріпаченій селянській родині. Рано став сиротою — мати померла, коли йому було 9 років, батько — у 11 років. Його доглядала сестра Катерина.
+
+Восени 1822 року починає вчитися грамоти у місцевого дяка. Іде наймитувати до дяка Богорського, який прибув з Києва. Не витерпівши знущань дяка, тікає від нього і шукає в навколишніх селах учителя-маляра.
+
+В 1828 році він потрапляє в число прислуги поміщика Енгельгардта, спочатку в ролі кухарчука, потім козачка. Помітивши у Тараса пристрасть до живопису, поміщик вирішує зробити його придворним художником. Він віддає свого кріпака в навчання викладачеві Віленського університету — портретисту Яну Рустему. У Вільні юний Тарас пробув 1,5 року.
+
+Переїхавши 1831 року з Вільно до Петербурга, Енгельгардт взяв із собою Шевченка і віддав його в науку на 4 роки до живописця Василя Ширяєва.
+
+Улітку 1836 р. він познайомився зі своїм земляком — художником І. Сошенком, а через нього — з Євгеном Гребінкою, В. Григоровичем і О. Венеціановим.
+
+Навесні 1838 Карл Брюллов та Василь Жуковський викупили молодого поета з кріпацтва.
+
+Незабаром став студентом Академії мистецтв.
+
+Першу збірку своїх поетичних творів видав 1840 під назвою «Кобзар». У першому виданні було 8 творів.
+
+25 травня 1843 року з Петербурга виїхав в Україну.
+
+В лютому 1844 року виїхав з України до Петербурга через Москву.
+
+У 1844р. написав гостро політичну поему «Сон» («У всякого своя доля»), ставши на шлях безкомпромісної боротьби проти самодержавної системи тодішньої Російської Імперії.
+
+5 квітня рада Академії мистецтв видала квиток на право проїзду на Україну. Вже в листопаді 1845 року збори Академії мистецтв у Петербурзі затвердили рішення ради про надання звання некласного художника.
+
+31 березня (12 квітня) 1845 року виїхав із Петербурга через Москву до Києва.
+
+Навесні 1846 року прибув до Києва. У квітні пристав до Кирило-Мефодіївського братства.
+
+Заарештували 5 квітня 1847, відправили до Петербурга й ув’язнили в казематі. Заслали в солдати до Оренбурга. Деяке полегшення становища Шевченка настало навесні 1848 унаслідок включення його до складу Аральської експедиції.
+
+У квітні 1850 Шевченка вдруге заарештовано і, після піврічного ув’язнення, запроторено в Новопетровський береговий форт.
+
+2 серпня 1857 – поета було звільнено з заслання.
+
+Навесні 1858 поет прибув до Петербурга. А влітку 1859 року повернувся в Україну, якої вже 12 років не бачив.
+
+До останніх днів свого життя поет перебував під таємним поліційним наглядом.
+
+10 березня 1861 року Шевченко помер в Петербурзі. Його ховають спочатку на Смоленському кладовищі, але, згідно з «Заповітом», 10 травня того ж року його прах перезахований в Україні над Дніпром на Чернечій горі (м. Канів).
+                </p>
+            </div>
+            <div class="scroll-hint">▼ прокрутiть вниз ▼</div>
+        </div>
+    </div>
+
+    <div class="section" id="facts">
+        <div class="content2">
+            <h2>Цікавинки</h2>
+            <p> 
+                <ul>
+                    <li style="list-style-type: square;"> Тарас Шевченко був  талановитим художником - він створив понад 1300 картин, із яких до нашого часу збереглися понад 800. До власних творів поет створював ілюстрації, любив малювати автопортрети. </li>
+                    <li style="list-style-type: square;">Твори Тараса Шевченка перекладені більш ніж ста мовами світу.</li>
+                    <li style="list-style-type: square;">Після смерті Шевченка в народі казали,  що Кобзар не помер, і що він визволить українців з кріпацтва.</li>
+                    <li style="list-style-type: square;">Шевченко був невисоким, мав зріст 164 см.</li>
+                    <li style="list-style-type: square;">За життя  Тараса Григоровича його більше цінували як художника, а не як поета. </li>
+                    <li style="list-style-type: square;">Поет завжди одягався досить модно, оскільки добре заробляв у Петербурзі, бувши успішним портретистом. </li>
+                    <li style="list-style-type: square;">Поет любив каву по-віденськи.  Але улюбленим напоєм Шевченка був чай, у який він частенько, за спогадами історика Миколи Костомарова, додавав ром. </li>
+                    <li style="list-style-type: square;">Улюбленою стравою Тараса Шевченка, як згадують його друзі, був борщ із сухими карасями, свіжою капустою і приправами.</li>
+                    <li style="list-style-type: square;">1975 року один із кратерів на Меркурії був названий на честь Тараса Григоровича Шевченка.</li>
+                    <li style="list-style-type: square;">1384 пам’ятники Тарасові Шевченку встановлено у світі. Перший пам’ятник Тарасові Шевченку встановили 1881 року в місті Форт-Шевченко.</li>
+                    <li style="list-style-type: square;">Найменше у світі видання Кобзаря має розмір близько половини квадратного міліметра, що менше за макове зернятко створив  український майстер Микола Сядристий. </li>
+                    <li style="list-style-type: square;">Радянська влада не могла просто заборонити твори Шевченка, бо вони були занадто відомі. Замість цього Кобзаря намагалися дискредитувати.</li>
+                    <li style="list-style-type: square;">Тараса Шевченко назвали Тарасом через близькість до іменин. 25 лютого, коли він народився, за юліанським календарем було свято Святого Тарасія.</li>
+                    <li style="list-style-type: square;">Він виріс в селі Керелівка, а не Кирилівка, як пишуть у всіх підручниках. Назва села походить від сільськогосподарського інструменту “керели”, схожого на граблі.</li>
+                    <li style="list-style-type: square;">У дяківській школі був такий старший учень, щось схоже на старосту, якого називали “консул”. Він мав допомагати педагогам бити різками інших дітей за непослух. Тарас посідав таку позицію.</li>
+                    <li style="list-style-type: square;">Історія життя Шевченка – це історія успіху кріпака. Він – “селф-мейд-мен” або людина, яка зробила себе сама. Як-от, є феномен “бразильських хлопчиків”: коли єдиний спосіб для хлопців із бразильских нетрів вибитися з бідності – стати футболістами.</li>
+                    <li style="list-style-type: square;">Перші гроші Тарас заробив, допомагаючи відспівувати небіжчиків. Він був помічником священника.</li>
+                    <li style="list-style-type: square;">У Тараса не трималися гроші. Він добре заробляв, але міг швидко витратити їх. Починаючи від недешевих подарунків родичам, закінчуючи тим, щоби витратити їх, гуляючи й випиваючи з товаришами.</li>
+                    <li style="list-style-type: square;">Усі знають вірш “Мені 13 минало”, там ідеться про Оксану Коваленко. Якби Тараса не забрали із села, велика ймовірність, що він був би селянином і одружився би з Оксаною.</li>
+                    <li style="list-style-type: square;">Ви знаєте шкільну історію про те, що геніальний художник Карл Брюллов намалював портрет поета Василя Жуковського. Його розіграли в лотерею серед імператорської сім’ї. І насправді тоді зібрали трохи більше половини суми, яку треба було віддати.</li>
+                    <li style="list-style-type: square;">Шевченку часто допомагали інші люди. Коли він опинився в Петербурзі, низка знайомств допомогла йому стати вільною людиною, його викупили з кріпатства. І навколо цього є багато міфів. Йдеться про придворну еліту Петербурга, де було багато вихідців з українських земель. Вони допомагали всім “направо й наліво”. Бачачи талант, вони викупляли людей, вважаючи, що це “плюс до карми”. Так і допомогли Тарасу.</li>
+                    <li style="list-style-type: square;">До кінця життя Шевченко самонавчався в гравюрі й робив величезні нововведення. Він приїхав із заслання і сказав, що не хоче займатися олійними портретами, почав вчитися у гравера Федора Йордана. Тоді його називали російським Рембрандтом за манеру передавання світлотіні. </li>
+                    <li style="list-style-type: square;">Коли Тараса викупили, йому було 24 роки. Сошенко, завдяки якому Шевченка викупили, писав, що в нього вселився “світський біс”. Тарас став так званим тусовщиком. Якби були клуби, він би в них ходив. А так він відвідував різноманітні зібрання, грав у карти. Це – людина, яка жила в інших реаліях, і нарешті відчула ковток свободи.</li>
+                    <li style="list-style-type: square;">Тарас знімав квартиру разом із Сошенком. Поруч у кімнаті жила Марія Європеус. Сошенко й Тарас закохалися в неї. Ця історія про те, що Тарас – не лузер. Марія вибрала його. А взаємини із Сошенком погіршилися. Стосунки між Марією й Тарасом не були довгими. Але й у Сошенка лишилася психологічна травма, пов’язана зі втратою коханої, з якою він хотів одружитися.</li>
+                    <li style="list-style-type: square;">Тарас відвідував борделі. Тоді проституція була легалізованою, а він був неодруженим.</li>
+                    <li style="list-style-type: square;">Коли Тараса відправили в заслання на край імперії, він випивав. Це типова норма для солдат того часу, інакше – не витримати. У нього є багато спогадів і записів про зловживання алкоголем. Але ми не знаємо, у якій мірі.</li>
+                    <li style="list-style-type: square;">Тарас повернувся із заслання в статусі Олега Сенцова. Це – ореол мученика, якого всі хотіли побачити в Москві й Петербурзі. У тогочасному розумінні – це накрити стіл. Тарасу це набридало.</li>
+                    <li style="list-style-type: square;">Живучи довго в Петербурзі, він про нього не відгукується, а пише, що любить Київ. Але там він прожив 17 років. Того часу в Петербурзі було багато українців.</li>
+                    <li style="list-style-type: square;">Найбільший міф – що Тарас писав для селян. По-перше, селяни не вміли читати, і тільки десь наприкінці 19 століття їм почали розказувати, хто такий Тарас Шевченко. Освічені люди тоді – переважно дворяни. Його публіка – вихідці з України, які про неї пам’ятали. З 30-х років у Петербурзі була мода на все малоросійське – українське. Це була найближча екзотика.</li>
+                    <li style="list-style-type: square;">Перший “Кобзар”, який вийшов у 1840 році накладом 1000 примірників, розкупили за 2 тижні. Це було вау!</li>
+                    <li style="list-style-type: square;">Улюбленим поетом Шевченка був Михайло Лермонтов.</li>
+                    <li style="list-style-type: square;">Тарас навчався в Академії мистецтв, мав три срібні медалі другого ступеня, але мріяв про золоту медаль першого ступеня. Тоді б за державний кошт можна було поїхати в Італію. А нам здається, що зранку до вечора Тарас мріяв про Україну.</li>
+                    <li style="list-style-type: square;">Усі кажуть, що Шевченко дуже мало прожив – 47 років. Але це була більш ніж середня тривалість життя чоловіків того часу.</li>
+                    <li style="list-style-type: square;">Коли його друзі влаштували перепоховання, це була чи не перша акція солідарності українців у Російській імперії.</li>
+                    <li style="list-style-type: square;">Григорій Честахівський сказав, що Шевченко колись говорив поховати його в Каневі. Це не так. Але добре, що так сталося. Бо в Києві – багато похованих героїв, а в Каневі – один.</li>
+                    <li style="list-style-type: square;">Тарас зробив усе, щоби ми героїзували й багато знали про козаків. Наприклад, про гайдамаків ми знаємо не з підручників історії, а з поеми “Гайдамаки”.</li>
+                    <li style="list-style-type: square;">Культ Шевченка виник ще за його життя, почав зміцнюватися після смерті й перепоховання. Тоді 90% етнічного українства були селянами, тому Тарас майже всюди в шапці та кожусі – образ мав бути простим і зрозумілим. Радянській владі це також було зручно. Тому з’явилася формула “поет-революціонер-демократ”, яка означала мало не “комуніст”.</li>
+                    <li style="list-style-type: square;">У 2002 році на території невизнаної Придністровської Молдавської республіки з’явилася оновлена 50-рублева банкнота з портретом Тараса Шевченка на лицьовій стороні. Раніше в обігу тут були купюри в 50 000 рублів із зображенням пам’ятника Тарасові Шевченку перед університетом в Тирасполі.</li>
+                    <li style="list-style-type: square;">15 років — стільки поет провів в Україні за все життя. У 14 років він виїхав із України з поміщиком Енгельгардтом, якому прислужував із дитинства, і потім приїжджав в Україну лише погостювати.   </li>
+                    <li style="list-style-type: square;"><font color="orange">СЛОВА ШЕВЧЕНКА, ЩО НАДИХАЮТЬ ТА ДОПОМАГАЮТЬ БОРОТИСЯ ЗА УКРАЇНУ:</font>
+                    <li style="list-style-type: square;"> Борітеся – поборете, Вам Бог допомагає! За вас правда, за вас слава, І воля святая!
+                    <li style="list-style-type: square;"> Вогонь запеклих не палить.
+                    <li style="list-style-type: square;">  І на оновленій землі врага не буде, супостата, А буде син, І буде мати, І будуть люди на землі.
+                    <li style="list-style-type: square;">В своїй хаті своя й правда, і сила, і воля. Нема на світі України, немає другого Дніпра,
+                    <li style="list-style-type: square;">Свою Україну любіть. Любіть її… Во врем’я люте. В останню тяжкую минуту За неї Господа моліть.
+                    <li style="list-style-type: square;">Наша дума, наша пісня, Не помре, не загине. Ось де, люди, наша слава, слава України!
+                    <li style="list-style-type: square;">Не вмирає душа наша, Не вмирає воля. Й неситий не виоре На дні моря поле.
+                    <li style="list-style-type: square;">  Кохайтеся ж, чорнобриві, Але не з москалями, Бо москалі – чужі люди, Роблять лихо з вами.
+                    <li style="list-style-type: square;"> Я так її, я так люблю мою Україну убогу, що проклену святого Бога, за неї душу погублю!
+                    <li style="list-style-type: square;"> В своїй хаті своя й правда, І сила, і воля.
+                    <li style="list-style-type: square;"> І возвеличимо на диво І розум наш, і наш язик</li>
+                </ul>
+            </p>
+            <div class="scroll-hint">▲ прокрутiть вверх або вниз ▼</div>
+        </div>
+    </div>
+
+    <div class="section" id="gallery">
+            <div class="content">
+            <h2>Картини</h2>
+            <div class="gallery-container">
+                <div class="artwork">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/1833_-_Taras_Shevchenko_-_Pavlo_Engelgardt_-_portrait_-.jpg" alt="Картина Енгельгардта" width="300" height="300">
+           <p class="hui"> Портрет Павла Васильовича Енгельгардта(1833)</p>
+            </div>
+           <div class="artwork">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/The_death_of_Oleg_of_Drelinia_%28Taras_Shevchenko%29.jpg" alt="Смерть Олега, князя древлянського" width="300" height="300">
+           <p> Смерть Олега, князя древлянського(1836)</p>
+           </div>
+           <div class="artwork">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/The_Death_of_Bohdan_Khmelnytsky_%28Taras_Shevchenko%29.jpg" alt="Смерть Богдана Хмельницького" width="300" height="300">
+           <p> Смерть Богдана Хмельницького(1836-1837)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/The_Death_of_Socrates_%28Taras_Shevchenko%29.jpg" alt="Смерть Сократа" width="300" height="300">
+            <p> Смерть Сократа(1837)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Taras_Shevchenko_painting_0015.jpg" alt="Козацький бенкет" width="300" height="300">
+            <p> Козацький бенкет(1838)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%86%D0%B2%D0%B0%D0%BD%D0%B0_%D0%90%D0%BD%D0%B4%D1%80%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87%D0%B0_%D0%9A%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0._2122.jpg" alt="Портрет Івана Андрійовича Крилова" width="300" height="300">
+            <p> Портрет Івана Андрійовича Крилова(1839-1841)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8F_%D0%90%D0%BD%D0%B4%D1%80%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87%D0%B0_%D0%96%D1%83%D0%BA%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE._2129.jpg" alt="Портрет Василя Андрійовича Жуковського" width="300" height="300">
+            <p> Портрет Василя Андрійовича Жуковського(1839-1844)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Taras_Shevchenko_selfportrait_oil_1840.jpg" alt="Автопортрет" width="300" height="300">
+            <p> Автопортрет(1840-1841)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%BE_%D0%A2._%D0%93._%D0%9A%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0._1842.jpg" alt="Катерина" width="300" height="300">
+            <p> Катерина(1842)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Peasant_family_by_Taras_Shevchenko.jpg" alt="Селянська родина" width="300" height="300">
+            <p> Селянська родина(1843)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Cossack-banduryst_%28Taras_Shevchenko%29.jpg" alt="«Сліпий» («Невольник»)" width="300" height="300">
+            <p> «Сліпий» («Невольник»)(1843)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Taras_Shevchenko_painting_0136.jpg" alt="Чумаки серед могил" width="300" height="300">
+            <p> Чумаки серед могил(1846)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Taras_Shevchenko_painting_0120.jpg" alt="Будинок І. П. Котляревського в Полтаві" width="300" height="300">
+            <p> Будинок І. П. Котляревського в Полтаві(1845)</p>
+           </div>
+           <div class="artwork">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Taras_Shevchenko_painting_0116.jpg"  alt="Хутір на Україні" width="300" height="300">
+            <p> Хутір на Україні(1845-1846)</p>
+           </div>
+           </div> 
+           </div>
+            <div class="scroll-hint">▲ прокрутiть вверх ▲</div>
+        </div>
+    </div>
+
+    <script>
+        // const sections = document.querySelectorAll('.section');
+        // let currentSection = 0;
+        // let isScrolling = false;
+
+        // function showSection(index) {
+        //     sections.forEach((section, i) => {
+        //         section.classList.toggle('active', i === index);
+        //     });
+        // }
+
+        // window.addEventListener('wheel', (e) => {
+        //     if (isScrolling) return;
+        //     isScrolling = true;
+
+        //     const direction = Math.sign(e.deltaY);
+        //     const nextSection = currentSection + direction;
+
+        //     if (nextSection >= 0 && nextSection < sections.length) {
+        //         currentSection = nextSection;
+        //         showSection(currentSection);
+        //     }
+
+        //     setTimeout(() => {
+        //         isScrolling = false;
+        //     }, 1000);
+        // });
+
+        // // Инициализация
+        // showSection(0);
+        let currentSection = 0;
+        let isAnimating = false;
+        const sections = document.querySelectorAll('.section');
+        let touchStartY = 0;
+
+        // Для ПК
+        window.addEventListener('wheel', (e) => {
+            if(isAnimating) return;
+            
+            const delta = Math.sign(e.deltaY);
+            const scrollTop = document.documentElement.scrollTop;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+            if((delta > 0 && scrollTop >= maxScroll - 10) || 
+               (delta < 0 && scrollTop <= 10)) {
+                handleNavigation(delta);
+            }
+        });
+
+        // Для мобильных
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            if(isAnimating) return;
+            
+            const touchEndY = e.changedTouches[0].clientY;
+            const delta = touchStartY - touchEndY;
+            
+            if(Math.abs(delta) > 50) {
+                handleNavigation(Math.sign(delta));
+            }
+        });
+
+        function handleNavigation(direction) {
+            if(isAnimating) return;
+            isAnimating = true;
+
+            const newIndex = currentSection + direction;
+            if(newIndex < 0 || newIndex >= sections.length) {
+                isAnimating = false;
+                return;
+            }
+
+            sections[currentSection].classList.remove('active');
+            sections[currentSection].classList.add('prev');
+            
+            currentSection = newIndex;
+            
+            sections[currentSection].classList.add('active');
+            
+            setTimeout(() => {
+                sections.forEach(section => section.classList.remove('prev'));
+                isAnimating = false;
+            }, 800);
+        }
+    </script>
+</body>
+</html>
