@@ -308,20 +308,19 @@
             <div class="scroll-hint">▲ прокрутiть вверх ▲</div>
         </div>
     </div>
-
-    <script>
- let currentSection = 0;
+<script>
+let currentSection = 0;
 let isAnimating = false;
 const sections = document.querySelectorAll('.section');
 let touchStartY = 0;
 let touchStartTime = 0;
-const minSwipeDistance = 100; // Минимальная дистанция свайпа
-const maxSwipeTime = 300; // Максимальное время свайпа в мс
+const minSwipeDistance = 100;
+const maxSwipeTime = 300;
 
-// Инициализация - показываем первый блок
+// Инициализация
 showSection(currentSection);
 
-// Для ПК - переключение при скролле до края
+// Для ПК
 window.addEventListener('wheel', (e) => {
     if(isAnimating) return;
     
@@ -337,7 +336,7 @@ window.addEventListener('wheel', (e) => {
     }
 }, { passive: false });
 
-// Для мобильных - обработка свайпов
+// Для мобильных
 document.addEventListener('touchstart', (e) => {
     if(isAnimating) return;
     touchStartY = e.touches[0].clientY;
@@ -345,9 +344,7 @@ document.addEventListener('touchstart', (e) => {
 }, { passive: true });
 
 document.addEventListener('touchmove', (e) => {
-    if(isAnimating) {
-        e.preventDefault();
-    }
+    if(isAnimating) e.preventDefault();
 }, { passive: false });
 
 document.addEventListener('touchend', (e) => {
@@ -358,7 +355,6 @@ document.addEventListener('touchend', (e) => {
     const deltaY = touchStartY - touchEndY;
     const timeDelta = touchEndTime - touchStartTime;
     
-    // Проверяем что это был быстрый свайп достаточной длины
     if(Math.abs(deltaY) > minSwipeDistance && timeDelta < maxSwipeTime) {
         e.preventDefault();
         handleNavigation(Math.sign(deltaY));
@@ -375,21 +371,15 @@ function handleNavigation(direction) {
         return;
     }
 
-    // Прячем текущую секцию
     sections[currentSection].classList.remove('active');
     sections[currentSection].classList.add(direction > 0 ? 'prev' : 'next');
     
-    // Показываем новую секцию
     currentSection = newIndex;
     sections[currentSection].classList.add('active');
     sections[currentSection].classList.remove('prev', 'next');
-    
-    // Сбрасываем скролл внутри секции
     sections[currentSection].scrollTop = 0;
     
-    setTimeout(() => {
-        isAnimating = false;
-    }, 800);
+    setTimeout(() => isAnimating = false, 800);
 }
 
 function showSection(index) {
@@ -400,6 +390,6 @@ function showSection(index) {
     currentSection = index;
     sections[currentSection].scrollTop = 0;
 }
-    </script>
+</script>
 </body>
 </html>
